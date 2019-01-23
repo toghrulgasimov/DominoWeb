@@ -46,8 +46,8 @@ window.onload = function () {
         for(let i = 0; i <= 6; i++) {
             for(let j = i; j <= 6; j++) {
                 let name = j+""+i;
-                d[name].x += 100;
-                d[name].y += 100;
+                d[name].x = 0;
+                d[name].y = 0;
                 d[name].interactive = true;
                 //d["32"].buttonMode = true;
                 d[name]
@@ -67,7 +67,13 @@ window.onload = function () {
             this.data = event.data;
             this.alpha = 0.5;
             this.dragging = true;
-            this.pp.rotate(90, 1000);
+            //this.pp.rotate(90, 1000);
+            if(this.rotation == 0) {
+
+            }else if(this.rotation) {
+
+            }
+            console.log(this.rotation);
         }
 
         function onDragEnd() {
@@ -81,16 +87,30 @@ window.onload = function () {
                 var newPosition = this.data.getLocalPosition(this.parent);
                 this.x = newPosition.x;
                 this.y = newPosition.y;
-
             }
         }
         let D = new Domino(S);
-        D.S["22"].rotate(90, 1000);
-        //D.S["66"].d.anchor.x = 0.5;
-        //D.S["66"].d.anchor.y = 0.5;
-        app.ticker.add(function(delta) {
 
-        });
+
+        (async function() {
+            D.S["32"].translate(300, 300, 500);
+            D.S["32"].rotate(90, 500);
+            await D.S["32"].sleep(1000);
+            D.S["53"].translate(300+120, 300, 500);
+            D.S["53"].rotate(90, 500);
+
+            await D.S["32"].sleep(1000);
+
+            console.log(D.S["53"].d.vertexData);
+            D.S["65"].translate(420+120, 360 - 60, 500);
+            D.S["65"].rotate(90, 500);
+
+        })();
+
+
+        // app.ticker.add(function(delta) {
+        //
+        // });
 
     }
 

@@ -12,4 +12,9 @@ class Domino {
             this.S[x].turnB();
         }
     }
+    disableAll() {
+        for(let x in this.S) {
+            this.S[x].translate(0, 0, 1000);
+        }
+    }
 }

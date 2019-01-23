@@ -17,10 +17,16 @@ class DominoStone {
             await this.sleep(10);
         }
     }
-    translate(ex, ey, fr) {
-        this.dx = (ex - this.d.x) / fr;
-        this.dy = (ey - this.d.y) / fr;
-        this.cntt = fr;
+    async translate(ex, ey, msec) {
+        let cnt = msec / 10;
+        let dx = (ex - this.d.x) / cnt;
+        let dy = (ey - this.d.y) / cnt;
+        while(cnt > 0) {
+            this.d.x += dx;
+            this.d.y += dy;
+            cnt--;
+            await this.sleep(10);
+        }
     }
     async scale(ssx, ssy, msec) {
         let cnt = msec / 10;
@@ -37,16 +43,8 @@ class DominoStone {
             resolve('resolved');
         });
     }
-    updater() {
-
-    }
-    updatet() {
-        if(this.cntt == 0) {
-            return;
-        }
-        this.d.x += this.dx;
-        this.d.y += this.dy;
-        this.cntt--;
+    getDegree() {
+        return this.d * 180 / Math.PI;
     }
     sleep(t) {
         return  new Promise(resolve => {
