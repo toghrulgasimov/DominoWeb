@@ -1,0 +1,3 @@
+./profile/.idea/
+./profile/.settings/
+./profile/.project
