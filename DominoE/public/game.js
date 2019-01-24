@@ -50,6 +50,9 @@ class Game {
                 }
             }
             this.table.push(selectedStone);
+
+            selectedStone.translate(destStone.d.x,destStone.d.y,1000);
+            selectedStone.rotate(-90,1000);
         }
         console.log(this.table);
     }
