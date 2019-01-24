@@ -1,9 +1,6 @@
 class DominoStone {
     constructor(d, tb, i, j) {
         this.d = d;
-        this.cntt = 0;
-        this.cntr = 0;
-        this.cnts = 0;
         this.backTexture = tb;
         this.Texture = this.d.Texture;
         this.active = {"left": i, "right": j};

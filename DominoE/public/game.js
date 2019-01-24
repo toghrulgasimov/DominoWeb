@@ -38,8 +38,7 @@ class Game {
             s.TYPE = "HAND";
             this.players[0].hand[i].d.on("pointerdown", (event) => {
                 if (this.table.length == 0) {
-                    s.translate(gamePad / 2, gamePad / 2, 1000);
-                    s.rotate(90, 1000);
+                    s.translate(gamePad / 2, gamePad / 2, 200);
                     s.TYPE = "TABLE";
                     this.play(s, null);
                 } else {
@@ -87,7 +86,8 @@ class Game {
                 }
             }
             this.table.push(selectedStone);
-            selectedStone.translate(destStone.d.x+120,destStone.d.y,1000);
+
+            selectedStone.translate(destStone.d.x+60,destStone.d.y,200);
         }
     }
 }
