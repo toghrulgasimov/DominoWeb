@@ -89,7 +89,7 @@ window.onload = function () {
             }
         }
 
-        let game = new Game(AR, 2);
+        let game = new Game(AR, 1);
 
         //game.shuffle(player.hand);
 

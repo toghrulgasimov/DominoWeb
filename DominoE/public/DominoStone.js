@@ -83,18 +83,34 @@ class DominoStone {
     }
 
     lightOn() {
-        this.scale(1.06, 1.06, 100);
+        // this.scale(1.06, 1.06, 100);
         this.d.alpha = 1;
     }
+
     lightOff() {
-        this.scale(1, 1, 100);
+        // this.scale(1, 1, 100);
         this.d.alpha = 0.5;
     }
+
     islightOff() {
         return this.d.alpha == 0.5;
     }
+
     islightOn() {
         return this.d.alpha == 1;
     }
 
+     select() {
+        return new Promise(async (resolve) => {
+            await this.scale(1.08, 1.08, 100);
+            resolve();
+        })
+    }
+
+    deSelect() {
+        return new Promise(async (resolve) => {
+            await this.scale(1, 1, 50);
+            resolve();
+        })
+    }
 }
