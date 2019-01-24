@@ -84,4 +84,20 @@ class DominoStone {
             await this.scale(1, 1, 200);
         }
     }
+
+    lightOn() {
+        this.scale(1.06, 1.06, 100);
+        this.d.alpha = 1;
+    }
+    lightOff() {
+        this.scale(1, 1, 100);
+        this.d.alpha = 0.5;
+    }
+    islightOff() {
+        return this.d.alpha == 0.5;
+    }
+    islightOn() {
+        return this.d.alpha == 1;
+    }
+
 }

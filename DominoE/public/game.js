@@ -1,20 +1,42 @@
 let tempStone = null;
 
 class Game {
-    constructor() {
+    constructor(A, playerCount) {
         this.table = [];
         this.players = [];
-
+        this.Bazar = new Bazar(A);
+        this.shuffle(this.Bazar.A);
+        this.init(600, 1);
+    }
+    distribute() {
+        for(let i = 0; i < this.players.length; i++) {
+            this.players[i].hand = this.Bazar.getStone(28);
+            this.players[i].arrangeStones();
+        }
+    }
+    shuffle(a) {
+        let j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
     }
 
-    init(gamePad) {
+
+    init(gamePad, playerCount) {
+        for(let i = 0; i < playerCount; i++) {
+            this.players.push(new Player());
+        }
+        this.distribute();
+
         for (let i = 0; i < this.players[0].hand.length; i++) {
             let s = this.players[0].hand[i];
             let player = this.players[0];
             s.TYPE = "HAND";
             this.players[0].hand[i].d.on("pointerdown", (event) => {
-                console.log(s);
-
                 if (this.table.length == 0) {
                     s.translate(gamePad / 2, gamePad / 2, 1000);
                     s.rotate(90, 1000);
@@ -23,31 +45,25 @@ class Game {
                 } else {
                     if(s.TYPE == "HAND") {
                         if(player.selectedStone != null) {
-                            player.selectedStone.d.alpha = 0.6;
+                            player.selectedStone.lightOff();
                         }
-
                         player.selectedStone = s;
-                        player.selectedStone.d.alpha = 1;
-
-
+                        player.selectedStone.lightOn();
                         for(let j = 0; j < this.table.length; j++) {
-                            this.table[j].d.alpha = 0.6;
-                            //console.log(this.table[j].active);
+                            this.table[j].lightOff();
                             for(let x in this.table[j].active) {
                                 if(this.table[j].active[x] == player.selectedStone.active["left"] ||
                                     this.table[j].active[x] == player.selectedStone.active["right"]) {
-                                    this.table[j].d.alpha = 1;
+                                    this.table[j].lightOn();
                                 }
                             }
                         }
-
-
                     }else {
-                        if(s.d.alpha == 1 && player.selectedStone != null) {
+                        if(s.islightOn() && player.selectedStone != null) {
                             this.play(player.selectedStone, s);
                             player.selectedStone.TYPE = "TABLE";
-                            s.d.alpha = 0.6;
-                            player.selectedStone.d.alpha = 0.6;
+                            s.lightOff();
+                            player.selectedStone.lightOff();
                             player.selectedStone = null;
                         }
                     }
@@ -72,7 +88,6 @@ class Game {
             }
             this.table.push(selectedStone);
             selectedStone.translate(destStone.d.x+120,destStone.d.y,1000);
-            //selectedStone.rotate(-90,1000);
         }
     }
 }

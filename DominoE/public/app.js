@@ -35,7 +35,6 @@ window.onload = function () {
                 domino.x = x;
                 domino.y = y;
                 domino.Texture = cuted;
-                domino.alpha = 0.89;
                 a.push(domino);
             }
         }
@@ -75,6 +74,7 @@ window.onload = function () {
             "b": a[29]
         };
         let S = {};
+        let AR = [];
         let player = new Player();
         for (let i = 0; i <= 6; i++) {
             for (let j = i; j <= 6; j++) {
@@ -82,74 +82,23 @@ window.onload = function () {
                 d[name].x = 0;
                 d[name].y = 0;
                 d[name].interactive = true;
-                //d["32"].buttonMode = true;
-                // d[name]
-                //     .on('pointerdown', onDragStart)
-                //     .on('pointerup', onDragEnd)
-                //     .on('pointerupoutside', onDragEnd)
-                //     .on('pointermove', onDragMove);
                 S[name] = new DominoStone(d[name], d["b"].texture, j, i);
                 d[name].pp = S[name];
                 app.stage.addChild(d[name]);
-
-                player.hand.push(S[name]);
-            }
-        }
-        //player.hand.splice(7, 20);
-        player.arrangeStones();
-        let game = new Game();
-        game.players.push(player);
-        game.init(600);
-
-
-
-        function onDragStart(event) {
-            this.data = event.data;
-            this.alpha = 0.5;
-            this.dragging = true;
-            //this.pp.rotate(90, 1000);
-            if (this.rotation == 0) {
-
-            } else if (this.rotation) {
-
-            }
-            console.log(this);
-        }
-
-        function onDragEnd() {
-            this.alpha = 1;
-            this.dragging = false;
-            this.data = null;
-        }
-
-        function onDragMove() {
-            if (this.dragging) {
-                var newPosition = this.data.getLocalPosition(this.parent);
-                this.x = newPosition.x;
-                this.y = newPosition.y;
+                AR.push(S[name]);
             }
         }
 
+        let game = new Game(AR, 1);
 
-        // (async function () {
-        //     D.S["32"].translate(300, 300, 500);
-        //     D.S["32"].rotate(90, 500);
-        //     await D.S["32"].sleep(1000);
-        //     D.S["53"].translate(300 + 120, 300, 500);
-        //     D.S["53"].rotate(90, 500);
-        //
-        //     await D.S["32"].sleep(1000);
-        //
-        //     console.log(D.S["53"].d.vertexData);
-        //     D.S["65"].translate(420 + 120, 360 - 60, 500);
-        //     D.S["65"].rotate(90, 500);
-        //
-        // })();
+        //game.shuffle(player.hand);
 
 
-        // app.ticker.add(function(delta) {
-        //
-        // });
+        //game.players.push(player);
+        //game.init(600);
+
+
+
 
     }
 
