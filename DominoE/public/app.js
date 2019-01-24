@@ -91,11 +91,6 @@ window.onload = function () {
 
         let game = new Game(AR, 2);
 
-        //game.shuffle(player.hand);
-
-
-        //game.players.push(player);
-        //game.init(600);
 
 
 
