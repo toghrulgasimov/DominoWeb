@@ -7,6 +7,7 @@ class DominoStone {
         this.backTexture = tb;
         this.Texture = this.d.Texture;
         this.active = {"left": i, "right": j};
+        this.TYPE = "BAZAR"; // BAZAR, HAND, TABLE
     }
 
     async rotate(r, msec) {

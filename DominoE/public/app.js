@@ -2,7 +2,7 @@ window.onload = function () {
 
 
     let app = new PIXI.Application({
-            width: 1000,
+            width: 2000,
             height: 1000,
             antialias: true,
             transparent: false,
@@ -35,6 +35,7 @@ window.onload = function () {
                 domino.x = x;
                 domino.y = y;
                 domino.Texture = cuted;
+                domino.alpha = 0.89;
                 a.push(domino);
             }
         }
@@ -94,11 +95,11 @@ window.onload = function () {
                 player.hand.push(S[name]);
             }
         }
-        player.hand.splice(7, 20);
+        //player.hand.splice(7, 20);
         player.arrangeStones();
         let game = new Game();
         game.players.push(player);
-        game.emitPlayerEvents(600);
+        game.init(600);
 
 
 

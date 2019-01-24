@@ -1,6 +1,7 @@
 class Player {
     constructor() {
         this.hand = [];
+        this.selectedStone = null;
     }
 
     arrangeStones() {
