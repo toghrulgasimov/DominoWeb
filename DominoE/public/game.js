@@ -43,7 +43,7 @@ class Game {
             this.players[0].hand[i].d.on("pointerdown", async (event) => {
                 console.log(s);
                 if (this.table.length == 0) {
-                    s.translate(gamePad / 2, gamePad / 2, 200);
+
                     s.TYPE = "TABLE";
                     s.lightOff();
                     s.deSelect();
@@ -89,7 +89,7 @@ class Game {
 
     play(selectedStone, destStone) {
         if (this.table.length == 0) {
-            selectedStone.rotate(90, 500);
+            this.moveStone(selectedStone,null);
             this.table.push(selectedStone);
         }
         else {
@@ -103,11 +103,7 @@ class Game {
                 }
             }
             this.table.push(selectedStone);
-
-            selectedStone.translate(destStone.d.x + 60, destStone.d.y, 200);
-            selectedStone.rotate(90,500);
-
-            // this.moveStone(selectedStone,destStone);
+            this.moveStone(selectedStone,destStone);
 
         }
 
@@ -137,10 +133,27 @@ class Game {
     }
 
     moveStone(selectedStone,destStone){
+        if(destStone == null) {
+            selectedStone.translate(200, 200, 500);
+            selectedStone.rotate(90, 500);
+            return;
+        }
+        // r-r
+        // l-l
+        // r-l
+        // l-r
 
+        selectedStone.translate(destStone.d.x + 120, destStone.d.y, 500);
+        if(destStone.active["left"] == selectedStone.active["left"]) {
+            selectedStone.rotate(-90, 500);
+        }else if(destStone.active["right"] == selectedStone.active["right"]) {
+            selectedStone.rotate(-90, 500);
+        }else if(destStone.active["left"] == selectedStone.active["right"]) {
+            selectedStone.rotate(90, 500);
+        }else if(destStone.active["right"] == selectedStone.active["left"]) {
+            selectedStone.rotate(90, 500);
+        }
 
-
-        selectedStone.translate(destStone.d.x + 60, destStone.d.y, 200);
     }
 
 
