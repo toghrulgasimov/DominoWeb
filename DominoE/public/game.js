@@ -88,8 +88,10 @@ class Game {
     }
 
     play(selectedStone, destStone) {
+
+        this.moveStone(selectedStone, destStone);
+
         if (this.table.length == 0) {
-            this.moveStone(selectedStone,null);
             this.table.push(selectedStone);
         }
         else {
@@ -103,8 +105,6 @@ class Game {
                 }
             }
             this.table.push(selectedStone);
-            this.moveStone(selectedStone,destStone);
-
         }
 
         this.lightActiveStones();
@@ -132,28 +132,51 @@ class Game {
 
     }
 
-    moveStone(selectedStone,destStone){
-        if(destStone == null) {
-            selectedStone.translate(200, 200, 500);
-            selectedStone.rotate(90, 500);
+    async moveStone(selectedStone, destStone) {
+        if (destStone == null) {
+            if (selectedStone.active["left"] != selectedStone.active["right"])
+                selectedStone.rotate(90, 100);
+
+            selectedStone.translate(700, 200, 300);
             return;
         }
-        // r-r
-        // l-l
-        // r-l
-        // l-r
 
-        selectedStone.translate(destStone.d.x + 120, destStone.d.y, 500);
-        if(destStone.active["left"] == selectedStone.active["left"]) {
-            selectedStone.rotate(-90, 500);
-        }else if(destStone.active["right"] == selectedStone.active["right"]) {
-            selectedStone.rotate(-90, 500);
-        }else if(destStone.active["left"] == selectedStone.active["right"]) {
-            selectedStone.rotate(90, 500);
-        }else if(destStone.active["right"] == selectedStone.active["left"]) {
-            selectedStone.rotate(90, 500);
+        if (destStone.active["left"] != undefined && Math.round(destStone.d.rotation * 180 / Math.PI) == 90) {
+            if (destStone.active["left"] == selectedStone.active["left"]) {
+                await selectedStone.rotate(-90, 100);
+                selectedStone.translate(destStone.d.x, destStone.d.y + 60, 300);
+            } else if (destStone.active["left"] == selectedStone.active["right"]) {
+                await selectedStone.rotate(90, 100);
+                selectedStone.translate(destStone.d.x + 120, destStone.d.y, 300);
+            }
         }
-
+        else if (destStone.active["left"] != undefined && Math.round(destStone.d.rotation * 180 / Math.PI) == -90) {
+            if (destStone.active["left"] == selectedStone.active["left"]) {
+                await selectedStone.rotate(90, 100);
+                selectedStone.translate(destStone.d.x, destStone.d.y - 60, 300);
+            } else if (destStone.active["left"] == selectedStone.active["right"]) {
+                await selectedStone.rotate(-90, 100);
+                selectedStone.translate(destStone.d.x - 120, destStone.d.y, 300);
+            }
+        }
+        else if (destStone.active["right"] != undefined && Math.round(destStone.d.rotation * 180 / Math.PI) == 90) {
+            if (destStone.active["right"] == selectedStone.active["left"]) {
+                await selectedStone.rotate(90, 100);
+                selectedStone.translate(destStone.d.x - 120, destStone.d.y, 300);
+            } else if (destStone.active["right"] == selectedStone.active["right"]) {
+                await selectedStone.rotate(-90, 100);
+                selectedStone.translate(destStone.d.x - 240, destStone.d.y + 60, 300);
+            }
+        }
+        else if (destStone.active["right"] != undefined && Math.round(destStone.d.rotation * 180 / Math.PI) == -90) {
+            if (destStone.active["right"] == selectedStone.active["left"]) {
+                await selectedStone.rotate(-90, 100);
+                selectedStone.translate(destStone.d.x + 120, destStone.d.y, 300);
+            } else if (destStone.active["right"] == selectedStone.active["right"]) {
+                await selectedStone.rotate(90, 100);
+                selectedStone.translate(destStone.d.x + 240, destStone.d.y - 60, 300);
+            }
+        }
     }
 
 

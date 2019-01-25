@@ -22,7 +22,7 @@ window.onload = function () {
 
         var background = new PIXI.Graphics();
         background.beginFill(0x123456);
-        background.drawRect(0, 0, 800, 600);
+        background.drawRect(0, 0, 1400, 600);
         background.endFill();
         app.stage.addChild(background);
 
