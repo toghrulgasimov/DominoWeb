@@ -51,6 +51,9 @@ class Game {
 
                 } else {
                     if (s.TYPE == "HAND") {
+                        if(!s.islightOn()) {
+                            return;
+                        }
                         if (player.selectedStone != null) {
                             player.selectedStone.deSelect();
                         }
@@ -61,8 +64,8 @@ class Game {
                             this.table[j].lightOff();
                             await this.table[j].deSelect();
                             for (let x in this.table[j].active) {
-                                if (this.table[j].active[x] == player.selectedStone.active["left"] ||
-                                    this.table[j].active[x] == player.selectedStone.active["right"]) {
+                                if (this.table[j].active[x] == player.selectedStone.active["kicik"] ||
+                                    this.table[j].active[x] == player.selectedStone.active["boyuk"]) {
                                     this.table[j].lightOn();
                                     await this.table[j].select();
                                 }
@@ -89,7 +92,7 @@ class Game {
 
     play(selectedStone, destStone) {
 
-        this.moveStone(selectedStone, destStone);
+        this.moveStone2(selectedStone, destStone);
 
         if (this.table.length == 0) {
             this.table.push(selectedStone);
@@ -120,8 +123,8 @@ class Game {
                 this.players[0].hand[i].lightOff();
                 for (let j = 0; j < this.table.length; j++) {
                     for (let x in this.table[j].active) {
-                        if ((this.table[j].active[x] == this.players[0].hand[i].active["left"] ||
-                            this.table[j].active[x] == this.players[0].hand[i].active["right"])
+                        if ((this.table[j].active[x] == this.players[0].hand[i].active["kicik"] ||
+                            this.table[j].active[x] == this.players[0].hand[i].active["boyuk"])
                             && this.players[0].hand[i].TYPE == "HAND") {
                             this.players[0].hand[i].lightOn();
                         }
@@ -137,47 +140,59 @@ class Game {
             if (selectedStone.active["left"] != selectedStone.active["right"])
                 selectedStone.rotate(90, 100);
 
-            selectedStone.translate(700, 200, 300);
+            selectedStone.translate(700, 200, 100);
             return;
         }
 
         if (destStone.active["left"] != undefined && Math.round(destStone.d.rotation * 180 / Math.PI) == 90) {
             if (destStone.active["left"] == selectedStone.active["left"]) {
                 await selectedStone.rotate(-90, 100);
-                selectedStone.translate(destStone.d.x, destStone.d.y + 60, 300);
+                selectedStone.translate(destStone.d.x, destStone.d.y + 60, 100);
             } else if (destStone.active["left"] == selectedStone.active["right"]) {
                 await selectedStone.rotate(90, 100);
-                selectedStone.translate(destStone.d.x + 120, destStone.d.y, 300);
+                selectedStone.translate(destStone.d.x + 120, destStone.d.y, 100);
             }
         }
         else if (destStone.active["left"] != undefined && Math.round(destStone.d.rotation * 180 / Math.PI) == -90) {
             if (destStone.active["left"] == selectedStone.active["left"]) {
                 await selectedStone.rotate(90, 100);
-                selectedStone.translate(destStone.d.x, destStone.d.y - 60, 300);
+                selectedStone.translate(destStone.d.x, destStone.d.y - 60, 100);
             } else if (destStone.active["left"] == selectedStone.active["right"]) {
                 await selectedStone.rotate(-90, 100);
-                selectedStone.translate(destStone.d.x - 120, destStone.d.y, 300);
+                selectedStone.translate(destStone.d.x - 120, destStone.d.y, 100);
             }
         }
         else if (destStone.active["right"] != undefined && Math.round(destStone.d.rotation * 180 / Math.PI) == 90) {
             if (destStone.active["right"] == selectedStone.active["left"]) {
                 await selectedStone.rotate(90, 100);
-                selectedStone.translate(destStone.d.x - 120, destStone.d.y, 300);
+                selectedStone.translate(destStone.d.x - 120, destStone.d.y, 100);
             } else if (destStone.active["right"] == selectedStone.active["right"]) {
                 await selectedStone.rotate(-90, 100);
-                selectedStone.translate(destStone.d.x - 240, destStone.d.y + 60, 300);
+                selectedStone.translate(destStone.d.x - 240, destStone.d.y + 60, 100);
             }
         }
         else if (destStone.active["right"] != undefined && Math.round(destStone.d.rotation * 180 / Math.PI) == -90) {
             if (destStone.active["right"] == selectedStone.active["left"]) {
                 await selectedStone.rotate(-90, 100);
-                selectedStone.translate(destStone.d.x + 120, destStone.d.y, 300);
+                selectedStone.translate(destStone.d.x + 120, destStone.d.y, 100);
             } else if (destStone.active["right"] == selectedStone.active["right"]) {
                 await selectedStone.rotate(90, 100);
-                selectedStone.translate(destStone.d.x + 240, destStone.d.y - 60, 300);
+                selectedStone.translate(destStone.d.x + 240, destStone.d.y - 60, 100);
             }
         }
     }
 
+    moveStone2(selectedStone, destStone) {
+        if(destStone == null) {
+            selectedStone.boyuk = [1,2,3];
+            selectedStone.kicik = [1,3,4];
+            selectedStone.rotate(90, 500);
+            selectedStone.translate(300, 300, 500);
+            return;
+        }
+        selectedStone.translate(destStone.d.x+120, destStone.d.y, 500);
+        selectedStone.rotate(90, 500);
+
+    }
 
 }

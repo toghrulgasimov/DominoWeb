@@ -1,9 +1,10 @@
 class DominoStone {
-    constructor(d, tb, i, j) {
+    constructor(d, tb, j, i) {
         this.d = d;
         this.backTexture = tb;
         this.Texture = this.d.Texture;
-        this.active = {"left": i, "right": j};
+        this.active = {"boyuk": j, "kicik": i};
+
         this.TYPE = "BAZAR"; // BAZAR, HAND, TABLE
     }
 
@@ -112,5 +113,18 @@ class DominoStone {
             await this.scale(1, 1, 50);
             resolve();
         })
+    }
+    donder(s, typ) {
+        let r = 0;
+        if(typ == "YUXARI") {
+            r = 0;
+        }else if(typ == "SAG") {
+            r = 90;
+        }else if(typ == "ASAGI") {
+            r = 180
+        }else if(typ == "SOL") {
+            r = -90
+        }
+
     }
 }
