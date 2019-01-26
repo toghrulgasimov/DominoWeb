@@ -114,17 +114,57 @@ class DominoStone {
             resolve();
         })
     }
+    eksi(d) {
+        // 1:yuxari, 2:sag, 3:asagi, 4:sol (sagin eksi sol yuxarinin eksi asagi ..)
+        if(d == 1) return 3;
+        if(d == 2) return 4;
+        if(d == 3) return 1;
+        if(d == 4) return 2;
+    }
     donder(s, typ) {
+        console.log(s, typ)
         let r = 0;
-        if(typ == "YUXARI") {
+        if(typ == 1) {
             r = 0;
-        }else if(typ == "SAG") {
+        }else if(typ == 2) {
             r = 90;
-        }else if(typ == "ASAGI") {
+        }else if(typ == 3) {
             r = 180
-        }else if(typ == "SOL") {
+        }else if(typ == 4) {
             r = -90
         }
+        if((s +"") == this.active["kicik"]) {
+            console.log(this.active["kicik"]);
+            //let k = r + 180;
+            //let k2 = r - 180;
+            //r = Math.min(Math.abs(k), Math.abs(k2));
+            r += 180;
+            this.kicik = [];
+            this.boyuk = [];
+            let e = typ;
+            if(e != 2) this.boyuk.push(2);
+            if(e != 4) this.boyuk.push(4);
+            if(e != 3) this.boyuk.push(3);
+            if(e != 1) this.boyuk.push(1);
+        }else {
+            this.kicik = [];
+            this.boyuk = [];
+            let e = typ;
+            if(e != 2) this.kicik.push(2);
+            if(e != 4) this.kicik.push(4);
+            if(e != 3) this.kicik.push(3);
+            if(e != 1) this.kicik.push(1);
+        }
+        if(r == 270) r = -90;
 
+        this.rotate(r, 500);
+
+    }
+    apar(ds, d) {
+        let x = ds.d.x, y = ds.d.y;
+        //if(d == 1) y -= 120;
+        if(d == 2) x += 120;
+        if(d == 4) x -= 120;
+        this.translate(x, y, 500);
     }
 }

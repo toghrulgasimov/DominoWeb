@@ -9,6 +9,13 @@ class Game {
         this.init(600, 1);
     }
 
+    eksi(d) {
+        // 1:yuxari, 2:sag, 3:asagi, 4:sol (sagin eksi sol yuxarinin eksi asagi ..)
+        if(d == 1) return 3;
+        if(d == 2) return 4;
+        if(d == 3) return 1;
+        if(d == 4) return 2;
+    }
     distribute() {
         for (let i = 0; i < this.players.length; i++) {
             this.players[i].hand = this.Bazar.getStone(28);
@@ -184,14 +191,40 @@ class Game {
 
     moveStone2(selectedStone, destStone) {
         if(destStone == null) {
-            selectedStone.boyuk = [1,2,3];
-            selectedStone.kicik = [1,3,4];
+            selectedStone.boyuk = [2,1,3];
+            selectedStone.kicik = [4,3,1];
             selectedStone.rotate(90, 500);
             selectedStone.translate(300, 300, 500);
+            console.log(selectedStone);
             return;
         }
-        selectedStone.translate(destStone.d.x+120, destStone.d.y, 500);
-        selectedStone.rotate(90, 500);
+
+        for (let x in selectedStone.active) {
+            for (let y in destStone.active) {
+                if (selectedStone.active[x] == destStone.active[y]) {
+                    if(y == "boyuk") {
+                        let d = destStone.boyuk[0];
+                        let ters = this.eksi(d);
+                        // 1-yuxari, 2-saga, 3-asagi, 4-sola
+                        selectedStone.donder(selectedStone.active[x], ters);
+                        selectedStone.apar(destStone, d);
+                    }else {
+                        let d = destStone.kicik[0];
+                        selectedStone.apar(destStone, d);
+                        let ters = this.eksi(d);
+                        // 1-yuxari, 2-saga, 3-asagi, 4-sola
+                        selectedStone.donder(selectedStone.active[x], ters);
+                    }
+                    delete selectedStone.active[x];
+                    delete destStone.active[y];
+
+                    return;
+                    break;
+                }
+            }
+        }
+        // selectedStone.translate(destStone.d.x+120, destStone.d.y, 500);
+        // selectedStone.rotate(90, 500);
 
     }
 

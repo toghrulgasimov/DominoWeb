@@ -84,7 +84,7 @@ window.onload = function () {
                 d[name].anchor.x = 0.5;
                 d[name].anchor.y = 0.5;
                 d[name].interactive = true;
-                S[name] = new DominoStone(d[name], d["b"].texture, j, i);
+                S[name] = new DominoStone(d[name], d["b"].texture, j+"", i+"");
                 d[name].pp = S[name];
                 app.stage.addChild(d[name]);
                 AR.push(S[name]);

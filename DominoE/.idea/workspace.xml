@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7817059-c24a-4e5a-ae44-c1c4617d7ad3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/DominoStone.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/DominoStone.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/game.js" afterDir="false" />
@@ -18,26 +17,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="86" column="68" selection-start-line="86" selection-start-column="68" selection-end-line="86" selection-end-column="68" />
-              <folding>
-                <element signature="e#67#216#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+            <state relative-caret-position="408">
+              <caret line="203" column="73" lean-forward="true" selection-start-line="203" selection-start-column="73" selection-end-line="203" selection-end-column="73" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#Game#0" />
                 <element signature="n#!!block;n#shuffle#0;n#Game#0" />
+                <element signature="n#!!block;n#init#0;n#Game#0" />
                 <element signature="n#!!block;n#lightActiveStones#0;n#Game#0" />
                 <element signature="n#!!block;n#moveStone#0;n#Game#0" />
               </folding>
@@ -57,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/DominoStone.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-413">
-              <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+            <state relative-caret-position="1003">
+              <caret line="121" column="28" lean-forward="true" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
               <folding>
                 <element signature="n#!!block;n#rotate#0;n#DominoStone#0" />
                 <element signature="n#!!block;n#translate#0;n#DominoStone#0" />
@@ -77,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/Player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            <state>
+              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -212,12 +200,12 @@
       <workItem from="1548330535230" duration="20565000" />
       <workItem from="1548411234091" duration="1376000" />
       <workItem from="1548415095545" duration="92000" />
-      <workItem from="1548415492483" duration="2339000" />
+      <workItem from="1548415492483" duration="5338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55484000" />
+    <option name="totallyTimeSpent" value="58483000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -287,24 +275,24 @@
     <entry file="file://$PROJECT_DIR$/public/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="86" column="68" selection-start-line="86" selection-start-column="68" selection-end-line="86" selection-end-column="68" />
+          <caret line="86" column="76" selection-start-line="86" selection-start-column="76" selection-end-line="86" selection-end-column="76" />
           <folding>
             <element signature="e#67#216#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/Player.js">
+    <entry file="file://$PROJECT_DIR$/public/bazar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        <state relative-caret-position="68">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/DominoStone.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-413">
-          <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="1003">
+          <caret line="121" column="28" lean-forward="true" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
           <folding>
             <element signature="n#!!block;n#rotate#0;n#DominoStone#0" />
             <element signature="n#!!block;n#translate#0;n#DominoStone#0" />
@@ -319,20 +307,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/bazar.js">
+    <entry file="file://$PROJECT_DIR$/public/Player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="54" column="35" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
+        <state relative-caret-position="408">
+          <caret line="203" column="73" lean-forward="true" selection-start-line="203" selection-start-column="73" selection-end-line="203" selection-end-column="73" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#Game#0" />
             <element signature="n#!!block;n#shuffle#0;n#Game#0" />
+            <element signature="n#!!block;n#init#0;n#Game#0" />
             <element signature="n#!!block;n#lightActiveStones#0;n#Game#0" />
             <element signature="n#!!block;n#moveStone#0;n#Game#0" />
           </folding>
