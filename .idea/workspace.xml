@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1c77241-2545-4c18-abe9-4e027c0e36cf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DominoE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DominoE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DominoE/public/DominoStone.js" beforeDir="false" afterPath="$PROJECT_DIR$/DominoE/public/DominoStone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DominoE/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/DominoE/public/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DominoE/public/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/DominoE/public/game.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,12 +19,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DominoE/public/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+            <state relative-caret-position="770">
+              <caret line="89" column="33" lean-forward="true" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
               <folding>
                 <element signature="e#710#1064#0" />
                 <element signature="e#1078#1852#0" />
-                <element signature="e#1967#2457#0" />
               </folding>
             </state>
           </provider>
@@ -37,11 +32,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DominoE/public/DominoStone.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="374">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#DominoStone#0" />
-                <element signature="n#!!block;n#rotate#0;n#DominoStone#0" />
                 <element signature="n#!!block;n#translate#0;n#DominoStone#0" />
                 <element signature="n#!!block;n#scale#0;n#DominoStone#0" />
                 <element signature="n#!!block;n#getDegree#0;n#DominoStone#0" />
@@ -65,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DominoE/public/Player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+            <state>
+              <caret column="11" selection-start-column="11" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -83,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DominoE/public/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="209" column="57" selection-start-line="209" selection-start-column="57" selection-end-line="209" selection-end-column="57" />
+            <state relative-caret-position="253">
+              <caret line="210" column="24" selection-start-line="210" selection-start-column="24" selection-end-line="210" selection-end-column="24" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#Game#0" />
                 <element signature="n#!!block;n#distribute#0;n#Game#0" />
@@ -104,6 +98,7 @@
     <findStrings>
       <find>deSelect</find>
       <find>eks</find>
+      <find>anch</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -119,14 +114,14 @@
         <option value="$PROJECT_DIR$/DominoE/public/index.html" />
         <option value="$PROJECT_DIR$/DominoE/public/Player.js" />
         <option value="$PROJECT_DIR$/DominoE/public/app.js" />
-        <option value="$PROJECT_DIR$/DominoE/public/game.js" />
         <option value="$PROJECT_DIR$/DominoE/public/DominoStone.js" />
+        <option value="$PROJECT_DIR$/DominoE/public/game.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="70" />
-    <option name="y" value="7" />
+    <option name="y" value="6" />
     <option name="width" value="1295" />
     <option name="height" value="720" />
   </component>
@@ -165,7 +160,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/DominoCopy" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -203,18 +198,18 @@
       <updated>1548278491068</updated>
       <workItem from="1548278493694" duration="8355000" />
       <workItem from="1548326546092" duration="1647000" />
-      <workItem from="1548496168764" duration="7280000" />
+      <workItem from="1548496168764" duration="9101000" />
+      <workItem from="1548536852331" duration="3116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36428000" />
+    <option name="totallyTimeSpent" value="41365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536913" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25704697" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -228,11 +223,31 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="PlantUML" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="PlantUML" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25704697" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="PlantUML" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -261,29 +276,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DominoE/public/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-          <folding>
-            <element signature="e#710#1064#0" />
-            <element signature="e#1078#1852#0" />
-            <element signature="e#1967#2457#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DominoE/public/Player.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DominoE/public/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="209" column="57" selection-start-line="209" selection-start-column="57" selection-end-line="209" selection-end-column="57" />
+        <state relative-caret-position="253">
+          <caret line="210" column="24" selection-start-line="210" selection-start-column="24" selection-end-line="210" selection-end-column="24" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#Game#0" />
             <element signature="n#!!block;n#distribute#0;n#Game#0" />
@@ -296,13 +299,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DominoE/public/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="89" column="33" lean-forward="true" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+          <folding>
+            <element signature="e#710#1064#0" />
+            <element signature="e#1078#1852#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DominoE/public/DominoStone.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="374">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#DominoStone#0" />
-            <element signature="n#!!block;n#rotate#0;n#DominoStone#0" />
             <element signature="n#!!block;n#translate#0;n#DominoStone#0" />
             <element signature="n#!!block;n#scale#0;n#DominoStone#0" />
             <element signature="n#!!block;n#getDegree#0;n#DominoStone#0" />

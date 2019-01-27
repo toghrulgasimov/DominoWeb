@@ -203,6 +203,7 @@ class Game {
             for (let y in destStone.active) {
                 if (selectedStone.active[x] == destStone.active[y]) {
                     if(y == "boyuk") {
+                        // dni optimal secme
                         let d = destStone.boyuk[0];
                         let ters = this.eksi(d);
                         // 1-yuxari, 2-saga, 3-asagi, 4-sola
